@@ -1,0 +1,101 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%
+}
+
+
+#background {
+  background-image: url(../images/51110caffb8ff39f7cf63c5b65d20b44.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+::-webkit-input-placeholder {
+  color: #ffffff57;
+}
+#loginContainer * {
+  color: #fff;
+  font-family: 'Roboto Slab', serif;\
+  font-weight: normal;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+#loginContainer {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  max-width: 1024px;
+}
+
+#loginContainer h2 {
+  text-align: center;
+  font-size: 2em;
+}
+
+#inputContainer {
+  width: 45%;
+  float: right;
+  padding: 20px;
+  border-left: 1px solid #fff;
+}
+
+#inputContainer
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="date"] {
+  display: block;
+  background-color: transparent;
+  border: 0;
+  margin-top:10px;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  line-height: 20px;
+}
+
+#inputContainer input[type="radio"] {
+  display:inline;
+  width: 50px;
+}
+
+#inputContainer label {
+  color: #c9dbe6;
+  font-size: 0.9em;
+}
+
+#inputContainer button {
+  color: white;
+  background-color: transparent;
+  width: auto;
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #fff;
+  width: 100%;
+  height: 40px;
+}
+
+#inputContainer button:hover {
+  cursor: pointer;
+}
+
+.hasAccountText span {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.hasAccountText{
+  text-align: center;
+}
+
+.hasAccountText :hover {
+  cursor: pointer;
+}
+
+#loginForm, #registerForm {
+  display: none;
+}
