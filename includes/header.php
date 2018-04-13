@@ -21,8 +21,14 @@
     <meta charset="utf-8">
     <title>Home Page</title>
     <link rel="stylesheet" type="text/css"href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
   </head>
   <body>
+
+    <script>
+
+    </script>
     <?php echo $userLoggedIn; ?>
     <div class="mainContainer">
 
