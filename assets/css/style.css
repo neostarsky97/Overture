@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 body {
@@ -122,6 +123,7 @@ body {
   margin-right: 12px;
   background-size: cover;
   float: left;
+  cursor: pointer;
 }
 
 #nowPlayingLeft .trackInfo {
@@ -140,6 +142,7 @@ body {
 #nowPlayingLeft .trackInfo .artistName span {
   font-size: 15px;
   color: #a0a0a0;
+  cursor: pointer;
 }
 
 #nowPlayingRight {
@@ -221,6 +224,7 @@ body {
 
 #mainContent {
   padding: 0 20px;
+  padding-bottom: 30px;
 }
 
 .pageHeadingBig {
@@ -275,7 +279,7 @@ body {
 
 .entityInfo .leftSection img{
   width: 100%;
-  height: 100;
+  height: 300;
 }
 
 .entityInfo .rightSection {
@@ -373,4 +377,76 @@ body {
 .trackListRow .trackInfo .trackName{
   color: #fff;
   margin-bottom: 5px;
+}
+
+.artistInfo {
+  text-align: center;
+}
+
+.button {
+  color: #fff;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 126px;
+  height: 40px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  min-width: 20px;
+}
+
+.button.green {
+  background-color: #1eb954;
+  border: none;
+}
+
+.artistInfo .artistName{
+  font-size: 50px;
+}
+
+.listHeading {
+  text-align: center;
+  padding: 8px 0 0 0;
+}
+
+.borderBottom {
+  border-bottom: 1px solid #fff;
+}
+
+.searchContainer {
+  padding: 20px 28px;
+  background-color: #242424;
+}
+
+.searchContainer h4 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.searchContainer .searchInput {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 60px;
+  letter-spacing: 1px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.artistsContainer .searchResultRow {
+  padding: 15px 10px;
+}
+
+.artistsContainer .searchResultRow:hover {
+  background-color: #282828;
+}
+
+.noResults {
+  margin: 15px;
+  display: block;
 }

@@ -6,6 +6,18 @@ var mouseDown = false;
 var currentIndex = 0;
 var repeat = false;
 var shuffle = false;
+var userLoggedIn;
+
+function openPage(url) {
+  if(url.indexOf("?") == -1) {
+    url = url + "?";
+  }
+  var encodedURL = encodeURI(url+"&userLoggedIn="+userLoggedIn);
+  $("#mainContent").load(encodedURL);
+  $("#body").scrollTop(0);
+  history.pushState(null, null, url);
+
+}
 
 function formatTime(seconds) {
   var time = Math.round(seconds);
@@ -33,6 +45,10 @@ function updateProgressBar(audio) {
 function updateVolumeProgressBar(audio) {
   var volume = audio.volume * 100;
   $(".volumeBar .progress").css("width", volume+"%");
+}
+
+function playArtistSong() {
+  setTrack(tempPlaylist[0], tempPlaylist, true);
 }
 
 function Audio() {

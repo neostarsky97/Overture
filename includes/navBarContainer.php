@@ -1,29 +1,30 @@
 <div class="navBarContainer">
   <nav class="navBar">
-    <img src="assets/images/icons/icons8_Wolf_50px.png" class="logo" alt="logo">
-
+    <span onclick="openPage('index.php')" class="logo">
+      <img src="assets/images/icons/icons8_Wolf_50px.png" class="logo" alt="logo">
+    </span>
     <div class="group">
       <div class="navItem">
-          <a href="search.php" class="navItemLink">Search
+          <span onclick="openPage('search.php')" class="navItemLink">Search
             <img src="assets/images/icons/search.png" class="icon" alt="Search icon">
-          </a>
+          </span>
       </div>
 
     </div>
 
     <div class="group">
       <div class="navItem">
-        <a href="browse.php" class="navItemLink">Browse
+        <span onclick="openPage('browse.php')" class="navItemLink">Browse
 
-        </a>
+        </span>
       </div>
 
       <div class="navItem">
-          <a href="yourMusic.php" class="navItemLink">Your Music</a>
+          <span onclick="openPage('yourMusic.php')" class="navItemLink">Your Music</span>
       </div>
 
       <div class="navItem">
-        <a href="profile.php" class="navItemLink">Brandon Stark</a>
+        <span onclick="openPage('profile.php')" class="navItemLink">Brandon Stark</span>
       </div>
     </div>
 
