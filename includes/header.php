@@ -4,6 +4,8 @@
   include_once('classes\Artist.php');
   include_once('classes\Album.php');
   include_once('classes\Song.php');
+  include_once('classes\User.php');
+  include_once('classes\Playlist.php');
 
   // session_destroy(); LOGOUT
 

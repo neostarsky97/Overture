@@ -8,6 +8,18 @@ var repeat = false;
 var shuffle = false;
 var userLoggedIn;
 
+$(document).click(function(click) {
+  var target = $(click.target);
+  if (!target.hasClass("item") && !target.hasClass("optionsButton")) {
+    console.log("being clicked");
+    hideOptionsMenu();
+  }
+});
+
+$(window).scroll(function() {
+  hideOptionsMenu();
+});
+
 function openPage(url) {
   if(url.indexOf("?") == -1) {
     url = url + "?";
@@ -16,7 +28,54 @@ function openPage(url) {
   $("#mainContent").load(encodedURL);
   $("#body").scrollTop(0);
   history.pushState(null, null, url);
+}
 
+function createPlaylist() {
+  var popup = prompt("Please enter the name of your playlist");
+
+  if(popup != null) {
+    $.post("includes/handlers/ajax/createPlaylist.php",{name : popup, username: userLoggedIn})
+    .done(function(error) {
+      if (error != "") {
+        alert(error);
+      }
+      //do something
+      openPage("yourmusic.php");
+    });
+  }
+}
+
+function deletePlaylist(playlistId) {
+  var popup = confirm("Are you sure you want to delete this playlist?");
+  if(popup == true) {
+    $.post("includes/handlers/ajax/deletePlaylist.php",{id : playlistId})
+    .done(function(error) {
+      if (error != "") {
+        alert(error);
+      }
+      //do something
+      openPage("yourmusic.php");
+    });
+  }
+}
+
+function showOptionsMenu(button) {
+  var optionsMenu = $(".optionsMenu");
+  var width = optionsMenu.width();
+  var scrollTop = $(window).scrollTop(); //retrieve pixel offset of scroll from top
+  var elementOffset = $(button).offset().top; //distance from top of document
+
+  var top = elementOffset - scrollTop;
+  var left = $(button).offset().left;
+
+  optionsMenu.css({"top":+top+"px", "left":+(left-width)+"px", "display": "inline"});
+}
+
+function hideOptionsMenu() {
+  var optionsMenu = $(".optionsMenu");
+  if ( optionsMenu.css("display") != "none") {
+    optionsMenu.css("display", "none");
+  }
 }
 
 function formatTime(seconds) {

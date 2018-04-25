@@ -11,7 +11,7 @@
 <div class="searchContainer">
   <h4>Search for an artist, album or song</h4>
   <input type="text" class="searchInput" value="<?php echo $searchQuery; ?>"
-    placeholder="Start typing..." onfocus="this.value = this.value;"></input>
+    placeholder="Start typing..." ></input>
 </div>
 
 <script type="text/javascript">
