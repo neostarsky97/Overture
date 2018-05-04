@@ -73,7 +73,8 @@
                     </div>
 
                     <div class='trackOptions'>
-                      <img src='assets/images/icons/more.png'>
+                      <input type='hidden' class='songId' value='" .$albumSong->getID() ."'>
+                      <img class='optionsButton' src='assets/images/icons/more.png' onclick='showOptionsMenu(this)'>
                     </div>
 
                     <div class='trackDuration'>
@@ -144,3 +145,14 @@
     ?>
   </div>
 </div>
+
+<nav class="optionsMenu">
+  <input type="hidden" class="songId"></input>
+  <?php echo Playlist::getPLaylistsDropdown($con, $userLoggedIn); ?>
+  <div class="item">
+      Copy song link
+  </div>
+  <div class="item">
+    Share song link
+  </div>
+</nav>

@@ -394,6 +394,7 @@ body {
   font-weight: 700;
   min-width: 20px;
   background-color: transparent;
+  margin: 15px; 
 }
 
 .button.green {
@@ -484,10 +485,31 @@ input:focus {
   color: rgba(147,147,147,0.8);
   cursor: pointer;
   height: 40px;
+  background-color: #282828;
+  font-size: 14px;
 }
 
 .optionsMenu .item:hover {
   color: #ff;
   background-color: #333;
   border-color: #333;
+}
+
+.optionsMenu select {
+  border: none;
+  text-indent: 12px;
+  -webkit-appearance: none;
+}
+
+.centerSection {
+  display: block;
+  text-align: center;
+}
+
+.userInfo {
+  font-size: 25px;
+}
+
+.buttonItems {
+  display: inline-grid;
 }

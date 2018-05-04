@@ -4,8 +4,7 @@ class User {
   private $con;
   private $id;
   private $username;
-  private $firstName;
-  private $lastName;
+  private $name;
   //add more variables later
 
   public function __construct($con, $username) {
@@ -23,6 +22,15 @@ class User {
 
   public function getUserName() {
     return $this->username;
+  }
+
+  public function getFullName() {
+    $stmt = $this->con->query("SELECT concat(firstName, ' ', lastName) as name FROM users
+      WHERE username = '$this->username'");
+    while ($row = $stmt->fetch()) {
+      $name = $row['name'];
+    }
+    return $name;
   }
 
 }

@@ -24,7 +24,7 @@
       </div>
 
       <div class="navItem">
-        <span onclick="openPage('profile.php')" class="navItemLink">Brandon Stark</span>
+        <span onclick="openPage('settings.php')" class="navItemLink">Brandon Stark</span>
       </div>
     </div>
 

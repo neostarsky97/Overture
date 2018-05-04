@@ -48,6 +48,7 @@ $artist = $album->getArtist();
                 </div>
 
                 <div class='trackOptions'>
+                  <input type='hidden' class='songId' value='" .$albumSong->getID() ."'>
                   <img class='optionsButton' src='assets/images/icons/more.png' onclick='showOptionsMenu(this)'>
                 </div>
 
@@ -67,8 +68,9 @@ $artist = $album->getArtist();
 
 <nav class="optionsMenu">
   <input type="hidden" class="songId"></input>
+  <?php echo Playlist::getPLaylistsDropdown($con, $userLoggedIn); ?>
   <div class="item">
-      Add to playlist
+      Copy song link
   </div>
   <div class="item">
     Share song link

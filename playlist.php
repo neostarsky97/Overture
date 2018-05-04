@@ -51,7 +51,8 @@ $user = new User($con, $playlist->getUserName());
                 </div>
 
                 <div class='trackOptions'>
-                  <img src='assets/images/icons/more.png'>
+                  <input type='hidden' class='songId' value='" .$playlistSong->getID() ."'>
+                  <img class='optionsButton' src='assets/images/icons/more.png' onclick='showOptionsMenu(this)'>
                 </div>
 
                 <div class='trackDuration'>
@@ -67,3 +68,17 @@ $user = new User($con, $playlist->getUserName());
     tempPlaylist = JSON.parse(songAsIDs);
   </script>
 </div>
+
+<nav class="optionsMenu">
+  <input type="hidden" class="songId"></input>
+  <?php echo Playlist::getPLaylistsDropdown($con, $userLoggedIn); ?>
+  <div class="item" onclick="removeFromPLaylist(this, '<?php echo $playlistId; ?>')">
+      Remove from playlist
+  </div>
+  <div class="item">
+      Copy song link
+  </div>
+  <div class="item">
+    Share song link
+  </div>
+</nav>
