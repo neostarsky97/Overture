@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2018 at 07:08 AM
+-- Generation Time: May 05, 2018 at 07:51 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -93,6 +93,51 @@ INSERT INTO `genres` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `playlists`
+--
+
+CREATE TABLE `playlists` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(50) COLLATE latin1_general_cs DEFAULT NULL,
+  `user` bigint(20) UNSIGNED DEFAULT NULL,
+  `dateCreated` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+
+--
+-- Dumping data for table `playlists`
+--
+
+INSERT INTO `playlists` (`id`, `name`, `user`, `dateCreated`) VALUES
+(2, 'Brother', 1, '2018-04-22 00:00:00'),
+(3, 'sick sick', 1, '2018-05-03 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `playlistsongs`
+--
+
+CREATE TABLE `playlistsongs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `songId` bigint(20) UNSIGNED DEFAULT NULL,
+  `playlistId` bigint(20) UNSIGNED DEFAULT NULL,
+  `playlistOrder` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+
+--
+-- Dumping data for table `playlistsongs`
+--
+
+INSERT INTO `playlistsongs` (`id`, `songId`, `playlistId`, `playlistOrder`) VALUES
+(3, 8, 2, 1),
+(12, 6, 2, 3),
+(13, 4, 3, 0),
+(14, 5, 3, 1),
+(15, 5, 3, 2);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `songs`
 --
 
@@ -113,28 +158,16 @@ CREATE TABLE `songs` (
 --
 
 INSERT INTO `songs` (`id`, `title`, `artist`, `album`, `genre`, `duration`, `path`, `plays`, `albumOrder`) VALUES
-(1, 'Man on the Moon', 1, 1, 1, '00:03:35', 'assets\\music\\Phillip Phillips\\The World from the Side of the Moon (2012)\\01 - Man on the Moon.mp3', 6, NULL),
-(2, 'Home', 1, 1, 1, '00:03:30', 'assets\\music\\Phillip Phillips\\The World from the Side of the Moon (2012)\\02 - Home.mp3', 13, NULL),
-(3, 'Gone, Gone, Gone', 1, 1, 1, '00:03:29', 'assets\\music\\Phillip Phillips\\The World from the Side of the Moon (2012)\\03 - Gone, Gone, Gone.mp3', 9, NULL),
-(4, 'Let Her Go', 2, 2, 2, '00:04:10', 'assets\\music\\Passenger\\02 - Passenger - Let Her Go.mp3', 5, NULL),
-(5, 'Paradise', 3, 3, 2, '00:04:37', 'assets\\music\\Coldplay\\Mylo Xyloto\\03 Paradise.m4a', 8, NULL),
-(6, 'Charlie Brown', 3, 3, 2, '00:04:45', 'assets\\music\\Coldplay\\Mylo Xyloto\\04 Charlie Brown.m4a', 13, NULL),
-(7, 'On The Wing', 4, 4, 3, '00:05:01', 'assets\\music\\Owl City\\Ocean Eyes\\08 On the Wing.mp3', 9, NULL),
-(8, 'Fireflies', 4, 4, 3, '00:03:48', 'assets\\music\\Owl City\\Ocean Eyes\\09 Fireflies.mp3', 9, NULL),
-(9, 'Lose Yourself', 5, 5, 4, '00:05:20', 'assets\\music\\Eminem\\Greatest Hits\\10 - Lose Yourself.mp3', 15, NULL),
-(10, 'Mockingbird', 5, 5, 4, '00:04:10', 'assets\\music\\Eminem\\Greatest Hits\\17 - Mockingbird.mp3', 12, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `userfiles`
---
-
-CREATE TABLE `userfiles` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `path` varchar(500) COLLATE latin1_general_cs DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+(1, 'Man on the Moon', 1, 1, 1, '00:03:35', 'assets\\music\\Phillip Phillips\\The World from the Side of the Moon (2012)\\01 - Man on the Moon.mp3', 14, NULL),
+(2, 'Home', 1, 1, 1, '00:03:30', 'assets\\music\\Phillip Phillips\\The World from the Side of the Moon (2012)\\02 - Home.mp3', 22, NULL),
+(3, 'Gone, Gone, Gone', 1, 1, 1, '00:03:29', 'assets\\music\\Phillip Phillips\\The World from the Side of the Moon (2012)\\03 - Gone, Gone, Gone.mp3', 12, NULL),
+(4, 'Let Her Go', 2, 2, 2, '00:04:10', 'assets\\music\\Passenger\\02 - Passenger - Let Her Go.mp3', 19, NULL),
+(5, 'Paradise', 3, 3, 2, '00:04:37', 'assets\\music\\Coldplay\\Mylo Xyloto\\03 Paradise.m4a', 21, NULL),
+(6, 'Charlie Brown', 3, 3, 2, '00:04:45', 'assets\\music\\Coldplay\\Mylo Xyloto\\04 Charlie Brown.m4a', 28, NULL),
+(7, 'On The Wing', 4, 4, 3, '00:05:01', 'assets\\music\\Owl City\\Ocean Eyes\\08 On the Wing.mp3', 19, NULL),
+(8, 'Fireflies', 4, 4, 3, '00:03:48', 'assets\\music\\Owl City\\Ocean Eyes\\09 Fireflies.mp3', 20, NULL),
+(9, 'Lose Yourself', 5, 5, 4, '00:05:20', 'assets\\music\\Eminem\\Greatest Hits\\10 - Lose Yourself.mp3', 27, NULL),
+(10, 'Mockingbird', 5, 5, 4, '00:04:10', 'assets\\music\\Eminem\\Greatest Hits\\17 - Mockingbird.mp3', 17, NULL);
 
 -- --------------------------------------------------------
 
@@ -187,6 +220,18 @@ ALTER TABLE `genres`
   ADD UNIQUE KEY `id` (`id`);
 
 --
+-- Indexes for table `playlists`
+--
+ALTER TABLE `playlists`
+  ADD UNIQUE KEY `id` (`id`);
+
+--
+-- Indexes for table `playlistsongs`
+--
+ALTER TABLE `playlistsongs`
+  ADD UNIQUE KEY `id` (`id`);
+
+--
 -- Indexes for table `songs`
 --
 ALTER TABLE `songs`
@@ -194,12 +239,6 @@ ALTER TABLE `songs`
   ADD KEY `genre` (`genre`),
   ADD KEY `album` (`album`),
   ADD KEY `artist` (`artist`);
-
---
--- Indexes for table `userfiles`
---
-ALTER TABLE `userfiles`
-  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Indexes for table `users`
@@ -230,16 +269,22 @@ ALTER TABLE `genres`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `playlists`
+--
+ALTER TABLE `playlists`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `playlistsongs`
+--
+ALTER TABLE `playlistsongs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- AUTO_INCREMENT for table `songs`
 --
 ALTER TABLE `songs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `userfiles`
---
-ALTER TABLE `userfiles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
