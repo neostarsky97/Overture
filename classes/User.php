@@ -5,6 +5,7 @@ class User {
   private $id;
   private $username;
   private $name;
+  private $email;
   //add more variables later
 
   public function __construct($con, $username) {
@@ -31,6 +32,15 @@ class User {
       $name = $row['name'];
     }
     return $name;
+  }
+
+  public function getEmail() {
+    $id = $this->getUserID();
+    $stmt = $this->con->query("SELECT email from users WHERE id = '$id'");
+    while($row = $stmt->fetch()) {
+      $email = $row['email'];
+    }
+    return $email;
   }
 
 }

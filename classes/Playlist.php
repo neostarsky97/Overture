@@ -52,12 +52,13 @@ class Playlist {
     return $songsIdArr;
   }
 
-  public static function getPLaylistsDropdown($con, $username) {
+  public static function getPLaylistsDropdown($con, $userObj) {
     $dropdown = '<select class="item playlist">
       <option value="">Add to playlist</option>';
 
+    $username = $userObj->getUserName();
     $stmt = $con->query("SELECT p.id, p.name from playlists p, users u
-      WHERE p.user = u.id AND u.username='brandon'");
+      WHERE p.user = u.id AND u.username='$username'");
 
     while ($row = $stmt->fetch()) {
       $id = $row['id'];
@@ -65,7 +66,6 @@ class Playlist {
 
       $dropdown = $dropdown . "<option value='$id'>$name</option>" ;
     }
-
 
     return $dropdown . "</select>";
   }

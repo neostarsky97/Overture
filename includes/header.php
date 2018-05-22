@@ -10,8 +10,9 @@
   // session_destroy(); LOGOUT
 
   if(isset($_SESSION['userLoggedIn'])) {
-    $userLoggedIn = $_SESSION['userLoggedIn'];
-    echo "<script>userLoggedIn = '$userLoggedIn'</script>";
+    $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
+    $username = $userLoggedIn->getUserName();
+    echo "<script>userLoggedIn = '$username' </script>";
   } else {
     // $urlEncode = urlencode("Location: \Overture\register.php");
     header("Location: register.php");
