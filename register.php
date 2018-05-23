@@ -131,7 +131,7 @@
             </p>
 
             <p>
-              <button type="submit" name="registerButton">SIGN IN</button>
+              <button type="submit" name="registerButton">SIGN UP</button>
             </p>
 
             <div class="hasAccountText">

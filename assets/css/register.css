@@ -4,6 +4,10 @@ html, body {
   height: 100%
 }
 
+* {
+  font-family: "HelveticaNeueLT Com 55 Roman", sans-serif;
+  color: #fff;
+}
 
 #background {
   background-image: url(../images/51110caffb8ff39f7cf63c5b65d20b44.jpg);
@@ -19,7 +23,6 @@ html, body {
 }
 #loginContainer * {
   color: #fff;
-  font-family: 'Roboto Slab', serif;\
   font-weight: normal;
   font-size: 1em;
   box-sizing: border-box;
@@ -35,6 +38,7 @@ html, body {
 #loginContainer h2 {
   text-align: center;
   font-size: 2em;
+  font-weight: bold;
 }
 
 #inputContainer {
