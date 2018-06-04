@@ -61,7 +61,7 @@ $artist = $album->getArtist();
     ?>
   </ul>
   <script type="text/javascript">
-    var songAsIDs = '<?php echo json_encode($songIdArray); ?>';
+    var songAsIDs = '<?php echo json_encode($songIdArray); ?>'; //PHP javascript conversion
     tempPlaylist = JSON.parse(songAsIDs);
   </script>
 </div>

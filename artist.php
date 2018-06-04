@@ -102,7 +102,7 @@
 
 <nav class="optionsMenu">
   <input type="hidden" class="songId"></input>
-  <?php echo Playlist::getPLaylistsDropdown($con, $userLoggedIn); ?>
+  <?php echo Playlist::getPLaylistsDropdown($con, $userLoggedIn); ?> //calling without instance
   <div class="item">
       Copy song link
   </div>

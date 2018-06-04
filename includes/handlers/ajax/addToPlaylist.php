@@ -12,6 +12,12 @@
       $order = $row['maxPlaylistOrder'];
     }
 
+    $stmt = $con->query("SELECT * FROM playlistSongs WHERE playlistId = $playlistId and songId = $songId");
+    if($stmt->rowCount() > 0) {
+      echo "Song already exists in playlist";
+      exit();
+    }
+
     $stmt = $con->query("INSERT INTO playlistSongs VALUES ('', '$songId', '$playlistId', '$order')");
 
     if (!$stmt) { //CHECK FOR ERRORS

@@ -17,7 +17,6 @@
           $songIdArray = array();
           while ($row = $songQuery->fetch(PDO::FETCH_ASSOC)) {
             array_push($songIdArray, $row['id']);
-
             $albumSong = new Song($con, $row['id']);
             $albumArtist = $albumSong->getArtist();
             $songDuration = ltrim($albumSong->getDuration(), '0:');
@@ -57,11 +56,8 @@
 <nav class="optionsMenu">
   <input type="hidden" class="songId"></input>
   <?php echo Playlist::getPLaylistsDropdown($con, $userLoggedIn); ?>
-  <div class="item">
+  <div class="item copySong">
       Copy song link
-  </div>
-  <div class="item">
-    Share song link
   </div>
   <div class="item download">
     Download song

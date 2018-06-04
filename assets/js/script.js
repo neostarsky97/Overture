@@ -35,7 +35,7 @@ $(document).on("change", "select.playlist", function() {
 });
 
 $(document).on("click", ".item.download", function() {
-  console.log("inside download");
+  //console.log("inside download");
   var songId = $(this).prevAll(".songId").val();
   $.post("includes/handlers/ajax/downloadSong.php", {songId: songId}).done(function(response) {
     var link = document.createElement("a");
@@ -43,6 +43,17 @@ $(document).on("click", ".item.download", function() {
     link.href = response;
     link.click();
   });
+});
+
+$(document).on("click", ".item.copySong", function() {
+  var songId = $(this).prevAll(".songId").val();
+  $.post("includes/handlers/ajax/downloadSong.php", {songId: songId}).done(function(response) {
+    var copyLink = response;
+    copyLink.select();
+    document.execCommand("copy");
+    alert("Link Copied!");
+  });
+});
 });
 
 function logout() {
