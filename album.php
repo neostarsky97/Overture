@@ -72,9 +72,6 @@ $artist = $album->getArtist();
   <div class="item">
       Copy song link
   </div>
-  <div class="item">
-    Share song link
-  </div>
   <div class="item download">
     Download song
   </div>

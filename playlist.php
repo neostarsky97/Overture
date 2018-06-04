@@ -78,9 +78,6 @@ $user = new User($con, $playlist->getUserName());
   <div class="item">
       Copy song link
   </div>
-  <div class="item">
-    Share song link
-  </div>
   <div class="item download">
     Download song
   </div>
