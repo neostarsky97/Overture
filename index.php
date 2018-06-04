@@ -1,7 +1,6 @@
 <?php
   include('includes/includedFiles.php');
 ?>
-
 <div class="songsContainer">
   <div class="listHeading songSearch">
     <h1>Top tracks</h1>
@@ -57,7 +56,7 @@
   <input type="hidden" class="songId"></input>
   <?php echo Playlist::getPLaylistsDropdown($con, $userLoggedIn); ?>
   <div class="item copySong">
-      Copy song link
+      Generate song link
   </div>
   <div class="item download">
     Download song

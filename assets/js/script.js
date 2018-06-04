@@ -48,12 +48,8 @@ $(document).on("click", ".item.download", function() {
 $(document).on("click", ".item.copySong", function() {
   var songId = $(this).prevAll(".songId").val();
   $.post("includes/handlers/ajax/downloadSong.php", {songId: songId}).done(function(response) {
-    var copyLink = response;
-    copyLink.select();
-    document.execCommand("copy");
-    alert("Link Copied!");
+    alert("Link: " + response);
   });
-});
 });
 
 function logout() {

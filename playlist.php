@@ -75,10 +75,10 @@ $user = new User($con, $playlist->getUserName());
   <div class="item" onclick="removeFromPLaylist(this, '<?php echo $playlistId; ?>')">
       Remove from playlist
   </div>
-  <div class="item">
-      Copy song link
+  <div class="item copySong">
+      Generate song link
   </div>
   <div class="item download">
-    Download song
+      Download song
   </div>
 </nav>

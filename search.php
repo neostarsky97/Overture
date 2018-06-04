@@ -149,8 +149,8 @@
 <nav class="optionsMenu">
   <input type="hidden" class="songId"></input>
   <?php echo Playlist::getPLaylistsDropdown($con, $userLoggedIn); ?>
-  <div class="item">
-      Copy song link
+  <div class="item copySong">
+      Generate song link
   </div>
   <div class="item download">
     Download song
